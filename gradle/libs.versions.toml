@@ -1,0 +1,48 @@
+[versions]
+kotlin = "2.1.20"
+kotlinxSerializationJson = "1.9.0"
+
+# Minecraft
+minecraft = "1.20.1"
+
+# Mappings
+# https://parchmentmc.org/docs/getting-started
+parchment = "2023.09.03"
+
+# Forge
+# https://files.minecraftforge.net/net/minecraftforge/forge/
+forge = "47.4.0"
+modDevGradle = "2.0.107"
+kotlinForForge = "4.11.0"
+
+# OMS
+oms = "1.0.0"
+omsApi = "1.0.0"
+
+# Testing
+kotest = "6.0.4"
+mockk = "1.14.6"
+
+[libraries]
+kotlinforforge = { module = "thedarkcolour:kotlinforforge", version.ref = "kotlinForForge" }
+#kotlinxSerialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+omsApi = { module = "io.conboi.oms:oms-api", version.ref = "omsApi" }
+
+# Mod
+oms = { module = "io.conboi.oms:oms", version.ref = "oms" }
+
+# Testing
+kotest-framework-engine = { module = "io.kotest:kotest-framework-engine", version.ref = "kotest" }
+kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+kotest-property = { module = "io.kotest:kotest-property", version.ref = "kotest" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+
+[bundles]
+testing = ["kotest-framework-engine", "kotest-runner-junit5", "kotest-assertions-core", "kotest-property", "mockk"]
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm" }
+modDevGradle = { id = "net.neoforged.moddev.legacyforge", version.ref = "modDevGradle" }
+#kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotest = { id = "io.kotest", version.ref = "kotest" }
